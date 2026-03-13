@@ -1,0 +1,55 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --rizz-bg: #0b3d3b;
+  --rizz-accent: #b8e0d2;
+  --rizz-secondary: #8fd0b5;
+  --rizz-text: #e6f5ef;
+}
+
+body {
+  background-color: var(--rizz-bg);
+  color: var(--rizz-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass {
+    background: rgba(11, 61, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(184, 224, 210, 0.1);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #b8e0d2, #8fd0b5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rizz-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rizz-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rizz-accent);
+}
