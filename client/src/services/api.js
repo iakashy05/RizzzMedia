@@ -1,4 +1,5 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/contact';
+const API_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.MODE === 'production' ? '/api/contact' : 'http://localhost:5000/api/contact');
 
 export const submitContactForm = async (data) => {
   try {

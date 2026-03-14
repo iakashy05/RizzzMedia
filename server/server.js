@@ -25,11 +25,16 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Rizzz Media API is running' });
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`
-  🚀 Server is running!
-  📡 Port: ${PORT}
-  🔗 URL: http://localhost:${PORT}
-  `);
-});
+// Export for Vercel
+export default app;
+
+// Start Server locally
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`
+    🚀 Server is running!
+    📡 Port: ${PORT}
+    🔗 URL: http://localhost:${PORT}
+    `);
+  });
+}
