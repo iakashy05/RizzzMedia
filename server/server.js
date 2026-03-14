@@ -17,12 +17,27 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
 // Routes
 app.use('/api/contact', contactRoutes);
 
-// Health Check
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'OK', message: 'Rizzz Media API is running' });
+// Health Check & Debug
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'OK', 
+    message: 'Rizzz Media API is running',
+    env: {
+      hasEmailUser: !!process.env.EMAIL_USER,
+      hasEmailPass: !!process.env.EMAIL_PASS,
+      nodeEnv: process.env.NODE_ENV,
+      isVercel: !!process.env.VERCEL
+    }
+  });
 });
 
 // Export for Vercel
