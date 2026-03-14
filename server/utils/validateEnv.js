@@ -3,44 +3,53 @@
  * Throws an error with a descriptive message if any are missing.
  */
 const validateEnv = () => {
+  const isVercel = process.env.VERCEL === '1';
+  
   const required = [
-    'PORT',
     'EMAIL_USER',
     'EMAIL_PASS'
   ];
 
+  // Only require PORT locally
+  if (!isVercel) {
+    required.push('PORT');
+  }
+
   const missing = required.filter(key => !process.env[key]);
 
   if (missing.length > 0) {
-    console.error(`
+    const errorMsg = `
     ❌ STARTUP ERROR: Missing Environment Variables
-    The following keys are missing in your .env file:
-    ${missing.join(', ')}
-
-    Please check your .env file and ensure these are defined.
-    Refer to .env.example for the required format.
-    `);
-    process.exit(1);
+    The following keys are missing: ${missing.join(', ')}
+    
+    If you are on Vercel, add these in Settings > Environment Variables.
+    `;
+    
+    if (isVercel) {
+      console.error(errorMsg);
+      // Don't exit on Vercel, just let the request fail gracefully
+      return;
+    } else {
+      console.error(errorMsg);
+      process.exit(1);
+    }
   }
 
   // Basic email format check for EMAIL_USER
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(process.env.EMAIL_USER)) {
-    console.error(`
-    ❌ STARTUP ERROR: Invalid EMAIL_USER
-    "${process.env.EMAIL_USER}" does not look like a valid email address.
-    `);
-    process.exit(1);
+  const emailUser = process.env.EMAIL_USER || '';
+  if (emailUser && !emailRegex.test(emailUser)) {
+    console.error(`❌ STARTUP ERROR: Invalid EMAIL_USER - "${emailUser}"`);
+    if (!isVercel) process.exit(1);
+    return;
   }
 
-  // Check for spaces in EMAIL_PASS (common mistake with Google App Passwords)
-  if (process.env.EMAIL_PASS.includes(' ')) {
-    console.error(`
-    ❌ STARTUP ERROR: Invalid EMAIL_PASS
-    Your EMAIL_PASS contains spaces. Google App Passwords must be entered without spaces.
-    Example: "ghlyahwknlgrcdjs" instead of "ghly ahwk nlgr cdjs"
-    `);
-    process.exit(1);
+  // Check for spaces in EMAIL_PASS
+  const emailPass = process.env.EMAIL_PASS || '';
+  if (emailPass && emailPass.includes(' ')) {
+    console.error(`❌ STARTUP ERROR: Invalid EMAIL_PASS - contains spaces.`);
+    if (!isVercel) process.exit(1);
+    return;
   }
 
   console.log('✅ Configuration Validated');
