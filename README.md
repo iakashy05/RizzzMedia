@@ -1,4 +1,4 @@
-# Rizzz Media - Premium Digital Marketing Agency
+# Rizzz Media - Digital Marketing Agency
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://rizzz-media.vercel.app/)
 
