@@ -1,14 +1,16 @@
 # Rizzz Media - Premium Digital Marketing Agency
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://rizzz-media.vercel.app/)
+
 A high-performance, full-stack landing page built for modern digital agencies.
 
 ## 🚀 Tech Stack
 
 - **Frontend**: React + Vite + Tailwind CSS
-- **Backend**: Node.js + Express
-- **Animations**: CSS Transitions, Framer-motion style interactions, Custom Hooks
+- **Backend**: Node.js + Express (Serverless via Vercel)
+- **Animations**: CSS Transitions, Magnetic Interactions, Custom Hooks
 - **Communication**: Nodemailer (GMAIL integration)
-- **Security**: Rate Limiting, Honeypot Spam Protection
+- **Security**: Rate Limiting, Honeypot Spam Protection, Environment Validation
 
 ## 📁 Project Structure
 
