@@ -4,22 +4,22 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    role: 'CEO, TechFlow',
-    content: 'Rizzz Media transformed our digital presence. Our ROI increased by 300% within the first six months of working with them.',
-    avatar: 'SJ'
+    name: 'Tanvi Kochhar',
+    role: 'Owner, Brown Beans',
+    content: 'Rizzz Media transformed our digital presence. Helped our brand grow exponentially.',
+    avatar: 'TK'
   },
   {
-    name: 'Michael Chen',
-    role: 'Marketing Director, Luminate',
+    name: 'Ruchika Chhabra',
+    role: 'Founder, English Finesse',
     content: 'The data-driven approach they take is refreshing. They don\'t just guess; they execute based on real market insights.',
-    avatar: 'MC'
+    avatar: 'RC'
   },
   {
-    name: 'Emma Williams',
-    role: 'Founder, EcoStep',
+    name: 'Akash Yadav',
+    role: 'Founder, SpydeX Tech',
     content: 'Communication is top-notch. It feels like they are an extension of our internal team rather than just an agency.',
-    avatar: 'EW'
+    avatar: 'AY'
   }
 ];
 

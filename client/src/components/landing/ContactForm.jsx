@@ -32,7 +32,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-rizz-text/40 text-xs uppercase tracking-widest font-bold">Email Us</p>
-                    <p className="text-rizz-text font-bold">rizzzmedia@gmail.com</p>
+                    <p className="text-rizz-text font-bold">contact.rizzzmedia@gmail.com</p>
                   </div>
                 </div>
 

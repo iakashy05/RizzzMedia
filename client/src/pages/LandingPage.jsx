@@ -41,7 +41,7 @@ const LandingPage = () => {
                       Start Your Audit
                     </Button>
                   </a>
-                  <Button variant="ghost" className="text-lg w-full sm:w-auto">
+                  <Button variant="ghost" className="text-lg w-full sm:w-auto" href="#contact">
                     Schedule a Call
                   </Button>
                 </div>

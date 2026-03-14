@@ -72,10 +72,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pb-[30px]">
-            <Button variant="primary" className="text-lg px-12 py-5 w-full sm:w-auto">
+            <Button variant="primary" className="text-lg px-12 py-5 w-full sm:w-auto" href="#contact">
               Get Free Marketing Audit
             </Button>
-            <Button variant="ghost" className="text-lg group">
+            <Button variant="ghost" className="text-lg group" href="https://www.instagram.com/rizzz.media/" target="_blank" rel="noopener noreferrer">
               View Our Work
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 ml-2 inline transition-transform group-hover:translate-x-1">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -22,32 +23,27 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-rizz-accent font-semibold mb-6">Services</h4>
+            <h4 className="text-rizz-accent font-semibold mb-6">Solutions</h4>
             <ul className="space-y-4 text-rizz-text/60">
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Social Media Marketing</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Performance Ads</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">SEO Optimization</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Content Creation</a></li>
+              <li><a href="#services" className="hover:text-rizz-accent transition-colors">Branding solutions</a></li>
+              <li><a href="#services" className="hover:text-rizz-accent transition-colors">Marketing solutions</a></li>
+              <li><a href="#services" className="hover:text-rizz-accent transition-colors">Tech Solutions</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-rizz-accent font-semibold mb-6">Company</h4>
             <ul className="space-y-4 text-rizz-text/60">
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Our Process</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Testimonials</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Careers</a></li>
+              <li><a href="#process" className="hover:text-rizz-accent transition-colors">Our Process</a></li>
+              <li><a href="#testimonials" className="hover:text-rizz-accent transition-colors">Testimonials</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-rizz-accent font-semibold mb-6">Connect</h4>
             <ul className="space-y-4 text-rizz-text/60">
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-rizz-accent transition-colors">Facebook</a></li>
+              <li><a href="https://www.instagram.com/rizzz.media/" className="hover:text-rizz-accent transition-colors">Instagram</a></li>
+              <li><a href="https://www.facebook.com/share/1BXoCRKbMF/" className="hover:text-rizz-accent transition-colors">Facebook</a></li>
             </ul>
           </div>
         </div>
@@ -55,8 +51,8 @@ const Footer = () => {
         <div className="border-t border-rizz-accent/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-rizz-text/40 text-sm">
           <p>© {new Date().getFullYear()} Rizzz Media. All rights reserved.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-rizz-accent">Privacy Policy</a>
-            <a href="#" className="hover:text-rizz-accent">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-rizz-accent">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-rizz-accent">Terms of Service</Link>
           </div>
         </div>
       </div>

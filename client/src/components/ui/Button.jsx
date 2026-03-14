@@ -7,7 +7,10 @@ const Button = ({
   variant = 'primary', 
   className = '',
   disabled = false,
-  magnetic = true
+  magnetic = true,
+  href,
+  target,
+  rel
 }) => {
   const magneticRef = useMagnetic();
   const baseStyles = 'px-6 py-3 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-rizz-accent focus:ring-offset-2 focus:ring-offset-rizz-bg disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center';
@@ -18,13 +21,30 @@ const Button = ({
     ghost: 'bg-transparent text-rizz-accent hover:bg-rizz-accent/10',
   };
 
+  const classes = `${baseStyles} ${variants[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <a
+        ref={magnetic ? magneticRef : null}
+        href={href}
+        target={target}
+        rel={rel}
+        className={classes}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       ref={magnetic ? magneticRef : null}
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
+      className={classes}
     >
       {children}
     </button>
