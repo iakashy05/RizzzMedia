@@ -1,6 +1,7 @@
 {
   "name": "rizzz-media",
   "version": "1.0.0",
+  "type": "module",
   "description": "Full-stack Marketing Agency Website",
   "private": true,
   "scripts": {
